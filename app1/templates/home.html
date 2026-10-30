@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Student Management</title></head>
+<body>
+<h2>Student Management System</h2>
+<a href="/app1/add/">Add Student</a>
+<hr>
+{% for s in students %}
+<p>{{ s.name }} - {{ s.roll_no }} - {{ s.course }}</p>
+<a href="/app1/student/{{ s.id }}/">View</a>
+<a href="/app1/edit/{{ s.id }}/">Edit</a>
+<a href="/app1/delete/{{ s.id }}/">Delete</a>
+<hr>
+{% empty %}
+<p>No Students</p>
+{% endfor %}
+</body>
+</html>
